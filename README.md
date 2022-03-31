@@ -1,12 +1,45 @@
 # 王天Blog小程序_写作爱好者的内容基地
 
 #### 介绍
-王天blog博客小程序，写作爱好者的内容基地，基于微慕wordpress小程序开发。兼容多种内容格式，风格媲美微信原生，拥有更好的阅读体验，支持展示章、图片集合，支持用户点赞、评论、转发、生成海报图等功能。
+王天blog博客小程序，写作爱好者的内容基地，基于微慕wordpress小程序开发。
+
+兼容多种内容格式，风格媲美微信原生，拥有更好的阅读体验，支持展示章、图片集合，支持用户点赞、评论、转发、生成海报图等功能。
+支持一键跳转微信公众号。
+
+#### 演示
+微信扫码查看王天博客小程序
+![王天博客微信小程序](https://wx.dslcv.com/gh_7984c8685e73_258.jpg) 
+
+#### 功能列表
+
+1、首页
+
+![王天博客微信小程序](https://wx.dslcv.com/jingtai/xiaochengxu/4.jpg)
+
+2、文章列表展示—UI布局媲美微信公众号列表
+
+![王天博客微信小程序](https://wx.dslcv.com/jingtai/xiaochengxu/5.jpg) 
+
+3、分类页
+
+![王天博客微信小程序](https://wx.dslcv.com/jingtai/xiaochengxu/6.jpg) 
+
+4、文章详情页
+
+![王天博客微信小程序](https://wx.dslcv.com/jingtai/xiaochengxu/2.jpg) 
+
+5、生成海报页
+
+![王天博客微信小程序](https://wx.dslcv.com/jingtai/xiaochengxu/3.jpg) 
+
+6、图集展示—仿小红书展示风格，图片支持多张轮播切换
+
+![王天博客微信小程序](https://wx.dslcv.com/jingtai/xiaochengxu/1.jpg) 
 
 #### 软件架构
-软件架构说明
-
-
+1、王天博客小程序后台继续wordpress，微慕wordpress小程序开发
+2、前端采用原生微信小程序，UI框架使用colorUI
+3、再次鸣谢微慕小程序开源版，王天才能快速开发一个自己喜欢的博客小程序
 #### 安装教程
 
 1.  xxxx
