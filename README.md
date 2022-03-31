@@ -29,7 +29,7 @@
 
 ##### 2、一键换肤
 
-![王天博客微信小程序](https://wx.dslcv.com/jingtai/xiaochengxu/yjhf.jpg)
+![王天博客微信小程序](https://wx.dslcv.com/jingtai/xiaochengxu/yjbf.jpg)
 
 换肤后的首页
 
