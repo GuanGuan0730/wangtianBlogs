@@ -1,0 +1,38 @@
+<!--
+/*
+ * 
+ * 王天博客小程序开源版
+ * 基于WordPress开源程序和WordPress REST API开发
+ * organization: 王天博客  wx.dslcv.com
+ * 码云地址：https://gitee.com/wangtianZS    
+ * 技术支持微信号：ycygyzyq
+ * 开源协议：MIT
+ * Copyright (c) 2022  王天博客 https://wx.dslcv.com All rights reserved.
+ *
+ */-->
+
+<import src="../../templates/header.wxml"/>
+<import src="../../templates/copyright.wxml" />
+
+<view class="container">
+  <template is="tempHeader" /> 
+
+  <view class='title'>请选{{praiseWord}}的金额</view>
+
+  <view class="price-list">
+    <view class="item" wx:for="{{prices}}" wx:key="item" data-item="{{item}}" bindtap="selectItem">
+      <view class="price-box {{selected==item?'active':''}}">
+        <em><text class="price">{{item}}</text>  元</em> 
+      </view>
+    </view>
+  </view>
+
+ <view style="text-align: center">
+  <button class="cancel-button;margin-bottom: 40rpx" formType="submit" size="mini" bindtap="cancel">取消</button>
+ </view>
+
+  <view class="ditail-copyright" style="display:{{display}}">
+     <template is="tempCopyright" data="{{ webSiteName:webSiteName,domain:domain}}"/>
+  </view>
+
+</view>

@@ -1,0 +1,143 @@
+<!--
+ * 王天博客小程序开源版
+ * 基于WordPress开源程序和WordPress REST API开发
+ * organization: 王天博客  wx.dslcv.com
+ * 码云地址：https://gitee.com/wangtianZS    
+ * 技术支持微信号：ycygyzyq
+ * 开源协议：MIT
+ * Copyright (c) 2022  王天博客 https://wx.dslcv.com All rights reserved.-->
+
+ <import src="../../templates/common-list.wxml" />
+<import src="../../templates/copyright.wxml" />
+<import src="../../templates/loading.wxml" />
+
+<ui-sys	tabbar >
+
+  <ui-navbar back="{{false}}" bg="ui-BG-Main" op isSlot>
+    <view class="flex-bar p-3"  wx:if="{{isPageShow}}" >
+      <image src="https://wx.dslcv.com/jingtai/xiaochengxu/shouye/logo.png" mode="aspectFill"    class="{{isShake?'shake':'driveInRight'}}"  
+ 
+      style="width: 350rpx;height: 96rpx;marsgin-top: -15rpx;margin-left: 30rpx;"  bindtap="clickGyg" />
+    </view>
+  </ui-navbar>
+  <!-- 首次进入引导添加到“我的小程序” -->
+  <view class="addMyMiniapp" wx:if="{{isFirst}}" catchtap="shutAddMyMiniapp">
+    <view>点击加入我的小程序 ↑</view>
+    <text>了解"{{webSiteName}}"最新文章</text>
+  </view>
+
+
+  <view class="index-top  ">
+
+    <view class="indexbg ui-BG-Main" style="margin-top: -{{sys_navBar+sys_statusBar+sys_capsule.top}}rpx;"> </view>
+ 
+    <view class="ui-BG-card ui-BG home-gyg-banner-container">
+      <!-- 搜索 -->
+     
+
+
+      <!-- 轮播图 -->
+      <view class="hpme-gyg-swiper-container">
+        
+        <ui-swiper  info="{{swipe_nav}}" wx:if="{{swipe_nav.length > 0}}" 
+        duration="360"
+        interval="4600"  
+        dotStyle="long" dotCur="ui-BG-Main"height="360rpx" imgHeight="360rpx" imgName="image" swiperCss="radius" bind:uiTap="redictAppDetail"   />
+      </view>
+ <form catchsubmit="formSubmit" catchreset="formReset" id="search-form">
+        <view class="ui-search-bar  ">
+          <!-- <view class="ui-search-action">
+            <ui-avatar slot="left" ui="round" src="/images/gravatar.png" />
+          </view> -->
+          <view class="ui-search-form   ">
+            <text class="ui-search-icon _icon-search" />
+            <input class="ui-search-input ui-search-text-left" value="" id="search-input" name="input" confirm-type="search" placeholder="搜索你感兴趣的内容..." bindconfirm="formSubmit" />
+            <text class="ui-search-close {{emptyIcon}}" wx:if="{{searchVal && isEmpty}}" catchtap="onTapEmpty" />
+          </view>
+          <view class="ui-search-action">
+            <button slot="right" class="ui-btn ui-BG-Main  sm" form-type="submit">搜索</button>
+          </view>
+        </view>
+      </form>
+
+    </view>
+
+
+  </view>
+
+
+  <!-- 图标导航 -->
+  <view class="index-sticky jingxuan-lanmu" wx:if="{{selected_nav.length > 0}}">
+    <ui-title title="精选栏目" desc="与美好不期而遇" depth="3">
+      <text slot="icon" class="ui-TC-Main cicon-slack-square" />
+    </ui-title>
+    <!-- <view class='ui-grid {{selected_nav.length<5?"ui-cols-4":"ui-cols-5"}}'> -->
+  <view class=' gyg-lf-container'>
+      <block wx:key="id" wx:for="{{selected_nav}}">
+        <view class="ui-item-gyg " wx:if="{{item.enable=='yes'}}" 
+        
+        catchtap="redictAppDetail" id="{{item.id}}" data-type="{{item.type}}" data-url="{{item.url}}" data-appid="{{item.appid}}" data-path="{{item.path}}">
+          <image class="lm-img-gyg" mode="aspectFill" src="{{item.image}}"></image>
+          <text class="ui-TC text-df gyg-lm-title">{{item.title}}</text>
+        </view>
+      </block>
+    </view>
+
+  </view>
+
+  <!-- 推荐文章 -->
+  <view class=" ui-BG-card ui-BG" wx:if="{{postsstickyList.length > 0}}">
+    <ui-title title="大家都在看" desc="内容一定很赞哦" depth="3">
+      <text slot="icon" class="ui-TC-Main cicon-whatshot" />
+    </ui-title>
+
+
+    <swiper class="sticky-list" autoplay="true" interval="200" duration="400" circular="true" display-multiple-items="2" vertical="true">
+      <swiper-item class="sticky-list-item" wx:for="{{postsstickyList}}"  wx:key="id" id="{{item.id}}"  data-urltype="{{item.format}} " data-allData ="{{item}}"  bindtap="redictDetail">
+        <view class="sticky-list-item-title ui-TC text-df gyg-aini">
+          <text class="dot ui-BG-Main"></text> {{item.title.rendered}}
+        </view>
+      </swiper-item>
+    </swiper>
+
+  </view>
+
+
+
+  <!-- 文章列表 -->
+  <view class="container ">
+    <view style="margin:20rpx 10px !important;padding: 0px 20rpx;background: none !important;" class="ui-BG-card ui-BG heading-3">
+    
+      <ui-title title="吐血推荐" desc="发现优质内容" depth="3">
+      <text slot="icon" class="ui-TC-Main cicon-discover" />
+    </ui-title>
+
+    </view>
+        
+    <!-- 列表template模板 -->
+    <template is="tempCommonList" data="{{postsList:postsList,listAdsuccess:listAdsuccess}}" />
+    <view style='display:{{isLoading?"block":"none"}};margin-top: 48rpx;'>
+      <template is="tempLoading" />
+    </view>
+    <!-- 无更多文章提示 -->
+    <view class="loadingmore" style="display:{{floatDisplay}}">
+
+      <view class="no-more" hidden="{{!isLastPage}}">- 无更多文章 -</view>
+    </view>
+    <!-- 版权信息template模板 -->
+    <view class="copyright">
+      <template is="tempCopyright" data="{{webSiteName:webSiteName,domain:domain}}" />
+    </view>
+  </view>
+
+
+  <!-- 无法访问网络 -->
+  <view class="showerror" style="display:{{showerror}}">
+      <text class="cicon-wifi-off text-xsl"></text> 
+    <view class="errortext">
+      暂时无法访问网络，下拉重试...
+    </view>
+  </view>
+
+  
+</ui-sys>

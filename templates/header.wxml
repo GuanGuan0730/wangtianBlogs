@@ -1,0 +1,20 @@
+<!--/*
+ * 
+ * 王天博客小程序开源版
+ * 基于WordPress开源程序和WordPress REST API开发
+ * organization: 王天博客  wx.dslcv.com
+ * 码云地址：https://gitee.com/wangtianZS    
+ * 技术支持微信号：ycygyzyq
+ * 开源协议：MIT
+ * Copyright (c) 2022  王天博客 https://wx.dslcv.com All rights reserved.
+ *
+ */-->
+
+<template name="tempHeader">
+  <view class="header">
+    <image src="../../images/logo700.png" style="height:300rpx;width:300rpx"></image>
+    <!-- <view style='margin-top:40rpx;line-height: 70rpx;'> -->
+   
+  </view>
+</template>
+<!-- header end -->

@@ -1,0 +1,83 @@
+{
+    "setting": {
+        "urlCheck": true,
+        "preloadBackgroundData": false,
+        "coverView": true,
+        "autoAudits": false,
+        "showShadowRootInWxmlPanel": true,
+        "checkInvalidKey": true,
+        "compileHotReLoad": false,
+        "lazyloadPlaceholderEnable": false,
+        "useMultiFrameRuntime": true,
+        "useApiHook": true,
+        "useApiHostProcess": true,
+        "useIsolateContext": true,
+        "showES6CompileOption": false
+    },
+    "projectname": "wx.dslcv.com",
+    "description": "项目私有配置文件。此文件中的内容将覆盖 project.config.json 中的相同字段。项目的改动优先同步到此文件中。详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html",
+    "condition": {
+        "plugin": {
+            "list": []
+        },
+        "game": {
+            "list": []
+        },
+        "gamePlugin": {
+            "list": []
+        },
+        "miniprogram": {
+            "list": [
+                {
+                    "id": -1,
+                    "name": "评论",
+                    "pathName": "pages/comments/comments",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "专题页",
+                    "pathName": "pages/topic/topic",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "我的",
+                    "pathName": "pages/readlog/readlog",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "文章详情",
+                    "pathName": "pages/detail/detail",
+                    "query": "id=1553",
+                    "scene": null
+                },
+                {
+                    "name": "文章页",
+                    "pathName": "pages/detail/detail",
+                    "query": "id=98",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "双哥",
+                    "pathName": "pages/detail/detail",
+                    "query": "id=39",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "关于王天",
+                    "pathName": "pages/about/about",
+                    "query": "",
+                    "scene": null,
+                    "launchMode": "default"
+                }
+            ]
+        }
+    }
+}

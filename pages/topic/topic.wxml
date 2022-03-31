@@ -1,0 +1,31 @@
+<import src="../../templates/copyright.wxml" />
+<import src="../../templates/login-popup.wxml" />
+<ui-sys tabbar>
+  <ui-navbar back="{{false}}" isSlot>
+    <view class="flex-center flex-sub">专栏</view>
+  </ui-navbar>
+  <view class="ui-grid ui-cols-2 fl-container">
+    <view class="ui-item-gyg-fl" wx:key="id" wx:for="{{categoriesList}}">
+      <image class="bgImg" mode="aspectFill" src="{{ item.category_thumbnail_image }}"  data-item="{{item.name}}" data-id="{{item.id}}" bindtap="redictIndex"></image>
+      <view class="ui-card-sub radius" data-subflag="{{item.subflag}}" data-id="{{item.id}}" catchtap="postsub">
+        <block wx:if="{{item.subflag==0}}">
+          <text class="cicon-toggle-o text-xs  ">订阅</text>
+        </block>
+        <block wx:if="{{item.subflag==1}}">
+          <text class="cicon-toggle text-xs ">已订阅</text>
+        </block>
+      </view>
+      <text class="fl-gyg-tile-name ui-BG-Main" data-item="{{item.name}}" data-id="{{item.id}}" bindtap="redictIndex">{{item.name}}</text>
+      <text   class=" fl-gyg-tile-wz-name " data-item="{{item.name}}" data-id="{{item.id}}" bindtap="redictIndex">{{item.count}}篇内容</text>
+      <view class="fl-name-gyg-title"> 
+        <text class="fl-name-title-des" data-item="{{item.name}}" data-id="{{item.id}}" bindtap="redictIndex">{{item.description}}</text>
+      </view>
+    </view>
+  </view>
+  <!-- 未登录时弹出的登录框 -->
+  <template is="login-popup" data="{{show: isLoginPopup, userInfo: userInfo}}"></template>
+  <!-- 版权信息 -->
+  <view class="copyright" style="display:{{floatDisplay}}">
+    <template is="tempCopyright" data="{{webSiteName:webSiteName,domain:domain}}" />
+  </view>
+</ui-sys>

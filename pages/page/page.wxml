@@ -1,0 +1,28 @@
+<!--
+/*
+ * 
+ * 王天博客小程序开源版
+ * 基于WordPress开源程序和WordPress REST API开发
+ * organization: 王天博客  wx.dslcv.com
+ * 码云地址：https://gitee.com/wangtianZS    
+ * 技术支持微信号：ycygyzyq
+ * 开源协议：MIT
+ * Copyright (c) 2022  王天博客 https://wx.dslcv.com All rights reserved.
+ *
+ */-->
+
+<import src="../../templates/header.wxml"/> 
+<view class="container">
+    <view class="content-article ">
+                    <view class="entry-title">
+                   {{pageData.title.rendered}}
+                    </view>
+                    <view class="entry-summary">
+                   <mp-html content="{{ pageData.content.rendered }}" bindlinktap="wxParseTagATap" copy-link="{{false}}" selectable="{{true}}" lazy-load="{{true}}" markdown="{{true}}" />
+                    </view>
+                </view>
+
+            <view class="ditail-copyright" style="display:{{display}}">
+ 
+  </view>
+</view>
