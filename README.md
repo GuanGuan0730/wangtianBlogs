@@ -29,11 +29,15 @@
 
 ![王天博客微信小程序](https://wx.dslcv.com/jingtai/xiaochengxu/2.jpg) 
 
-##### 5、生成海报页
+##### 5、跳转公众号原文
+
+![王天博客微信小程序](https://wx.dslcv.com/jingtai/xiaochengxu/7.jpg) 
+
+##### 6、生成海报页
 
 ![王天博客微信小程序](https://wx.dslcv.com/jingtai/xiaochengxu/3.jpg) 
 
-##### 6、图集展示—仿小红书展示风格，图片支持多张轮播切换
+##### 7、图集展示—仿小红书展示风格，图片支持多张轮播切换
 
 ![王天博客微信小程序](https://wx.dslcv.com/jingtai/xiaochengxu/1.jpg) 
 #### 功能列表
